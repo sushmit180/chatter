@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chats</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+    <h1>chatter</h1>
+    <div class="chat-container">
+    <% for(let i = 0; i < allchat.length; i++) { %>
+        <div class="chat-box">
+            <p><strong>From:</strong> <%= allchat[i].from %></p>
+            <p><strong>To:</strong> <%= allchat[i].to %></p>
+            <p><strong>Message:</strong> <%= allchat[i].msg %></p>
+            <p>
+                <a href="/chats/edit/<%= allchat[i].id %>">✏️ Edit</a>
+                <a href="/chats/delete/<%= allchat[i].id %>">🗑️ Delete</a>
+            </p>
+        </div>
+    <% } %>
+    <a class="create-link" href="/chats/create">➕ Send a Chat</a>
+</div>
+
+</body>
+</html>
